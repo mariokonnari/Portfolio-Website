@@ -6,6 +6,7 @@ export type Project = {
     github?: string;
     live?: string;
     featured?: boolean;
+    images: string[];
 };
 
 export const projects: Project[] = [
@@ -18,6 +19,14 @@ export const projects: Project[] = [
         github: "https://github.com/mariokonnari/SaaS-Dashboard-Auth-CRUD",
         live: "https://saasdashboarddemo.netlify.app/",
         featured: true,
+        images: [
+            "/projects/saas-dashboard/1.png",
+            "/projects/saas-dashboard/2.png",
+            "/projects/saas-dashboard/3.png",
+            "/projects/saas-dashboard/4.png",
+            "/projects/saas-dashboard/5.png",
+            "/projects/saas-dashboard/6.png",
+        ],
     },
     {
     num: "02",
@@ -26,7 +35,12 @@ export const projects: Project[] = [
       "A powerful web application that provides instant, AI-powered code reviews using Google's Gemini API. Get expert-level feedback on security, performance, readability, testing, and general best practices.",
     tags: ["Next.js", "React", "TypeScript", "TailwindCSS", "AI Integration", "jsPDF"],
     github: "https://github.com/mariokonnari/AI-code-reviewer",
-    live: "https://aicodereviewerdemo.vercel.app/"
+    live: "https://aicodereviewerdemo.vercel.app/",
+    images: [
+        "/projects/ai-code-reviewer/1.png",
+        "/projects/ai-code-reviewer/2.png",
+        "/projects/ai-code-reviewer/3.png",
+        ],
     },
     {
     num: "03",
@@ -36,5 +50,11 @@ export const projects: Project[] = [
     tags: ["React", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Vite", "REST API"],
     github: "https://github.com/mariokonnari/Amazon-Clone",
     live: "https://mariozon.vercel.app/",
+    images: [
+        "/projects/amazon-clone/1.png",
+        "/projects/amazon-clone/2.png",
+        "/projects/amazon-clone/3.png",
+        "/projects/amazon-clone/4.png",
+        ],
     },
 ];
