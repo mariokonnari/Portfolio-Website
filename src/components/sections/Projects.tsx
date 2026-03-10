@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { projects, type Project } from "@/lib/projects";
 import { cn } from "@/lib/utils";
+import ProjectSlideshow from "@/components/ui/ProjectSlideshow";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
@@ -27,63 +28,75 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       className={cn(
-        "group relative bg-[var(--surface)] rounded-2xl border border-[var(--border)] p-10",
+        "group relative bg-[var(--surface)] rounded-2xl border border-[var(--border)] p-10 overflow-hidden",
         "hover:-translate-y-2 hover:shadow-2xl transition-all duration-300",
-        project.featured && "col-span-2"
+        "grid gap-8 items-center",
+        project.featured ? "col-span-2" : ""
       )}
+      style={project.featured 
+        ? { gridTemplateColumns: "1.4fr 1fr"}
+        : { gridTemplateColumns: "1.2fr 0.8fr"}}
     >
-      {project.featured && (
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-semibold uppercase tracking-widest mb-5">
-          ✦ Featured
+      {/* Left - text content */}
+      <div className="flex flex-col">
+        {project.featured && (
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-semibold uppercase tracking-widest mb-5 self-start">
+            ✦ Featured
+          </div>
+        )}
+
+        <div className="text-xs font-bold uppercase tracking-widest text-[var(--accent)] mb-4">
+          Project {project.num}
         </div>
-      )}
 
-      <div className="text-xs font-bold uppercase tracking-widest text-[var(--accent)] mb-4">
-        Project {project.num}
+        <h3 className="font-black text-2xl tracking-tight leading-tight mb-3">
+          {project.title}
+        </h3>
+
+        <p className="text-sm font-light text-[var(--ink-muted)] leading-relaxed mb-7 max-w-lg">
+          {project.description}
+        </p>
+
+        <div className="flex flex-wrap gap-2 mb-8">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="px-3 py-1 rounded-full bg-[var(--bg)] border border-[var(--border)] text-xs font-medium text-[var(--ink-muted)]"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div className="flex gap-5">
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium hover:text-[var(--accent)] transition-colors duration-200"
+            >
+              GitHub
+              <ArrowUpRight size={14} />
+            </a>
+          )}
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium hover:text-[var(--accent)] transition-colors duration-200"
+            >
+              Live demo
+              <ArrowUpRight size={14} />
+            </a>
+          )}
+        </div>
       </div>
 
-      <h3 className="font-black text-2xl tracking-tight leading-tight mb-3">
-        {project.title}
-      </h3>
-
-      <p className="text-sm font-light text-[var(--ink-muted)] leading-relaxed mb-7 max-w-lg">
-        {project.description}
-      </p>
-
-      <div className="flex flex-wrap gap-2 mb-8">
-        {project.tags.map((tag) => (
-          <span
-            key={tag}
-            className="px-3 py-1 rounded-full bg-[var(--bg)] border border-[var(--border)] text-xs font-medium text-[var(--ink-muted)]"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
-
-      <div className="flex gap-5">
-        {project.github && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm font-medium hover:text-[var(--accent)] transition-colors duration-200"
-          >
-            GitHub
-            <ArrowUpRight size={14} />
-          </a>
-        )}
-        {project.live && (
-          <a
-            href={project.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm font-medium hover:text-[var(--accent)] transition-colors duration-200"
-          >
-            Live demo
-            <ArrowUpRight size={14} />
-          </a>
-        )}
+      {/* Right - slideshow (always shown) */}
+      <div className={project.featured ? "h-72" : "h-full min-h-[200px] overflow-hidden rounded-xl"}>
+          <ProjectSlideshow images={project.images} title={project.title} />
       </div>
     </motion.div>
   );
