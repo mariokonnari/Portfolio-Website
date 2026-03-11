@@ -24,7 +24,7 @@ export default function About() {
     const inView = useInView(ref, { once: true, margin: "-100px" });
 
     return (
-        <section id="about" ref={ref} className="bg-[var(--surface)] px-16 py-32">
+        <section id="about" ref={ref} className="bg-[var(--surface)] px-6 md:px-16 py-20 md:py-32">
             {/* Section header */}
             <motion.div
                 custom={0}
@@ -42,7 +42,7 @@ export default function About() {
                 <div className="flex-1 h-px bg-[var(--border)] ml-5" />
             </motion.div>
             {/* Content grid */}
-            <div className="grid grid-cols-2 gap-20 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
                 {/* Left - bio */}
                 <motion.div
                     custom={0.15}
@@ -85,7 +85,7 @@ export default function About() {
                 </motion.div>
 
                 {/* Right - stats */}
-                <div className="grid grid-cols-2 gap-5">
+                <div className="grid grid-cols-2 gap-4 md:gap-5">
                     {stats.map((stat, i) => (
                         <motion.div
                             key={stat.label}
@@ -93,9 +93,9 @@ export default function About() {
                             variants={fadeUp}
                             initial="hidden"
                             animate={inView ? "visible" : "hidden"}
-                            className="bg-[var(--bg)] rounded-xl p-7 group hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
+                            className="bg-[var(--bg)] rounded-xl p-5 md:p-7 group hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
                         >
-                            <div className="font-black text-5xl leading-none tracking-tight mb-2">
+                            <div className="font-black text-4xl md:text-5xl leading-none tracking-tight mb-2">
                                 {stat.num.endsWith("+") ? (
                                     <>
                                         {stat.num.slice(0, -1)}
