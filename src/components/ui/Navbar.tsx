@@ -27,7 +27,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className={cn(
-                "fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-16 py-5",
+                "fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-16 py-5",
                 "backdrop-blur-md transition-all duration-300",
                 scrolled
                     ? "border-b border-[var(--border)] bg-[var(--bg)]/85"
@@ -40,8 +40,23 @@ export default function Navbar() {
             >
                 MK<span className="text-[var(--accent)]">.</span>
             </Link>
+            
+            {/* Desktop nav */}
+            <ul className="hidden md:flex gap-9 list-none">
+                {navLinks.map((link) => (
+                    <li key={link.href}>
+                        <Link
+                            href={link.href}
+                            className="text-xs font-medium uppercase tracking-widest text-[var(--ink-muted)] hover:text-[var(--accent)] transition-colors duration-200"
+                        >
+                            {link.label}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
 
-            <ul className="flex gap-9 list-none">
+            {/* Mobile nav */}
+            <ul className="flex md:hidden gap-4">
                 {navLinks.map((link) => (
                     <li key={link.href}>
                         <Link
