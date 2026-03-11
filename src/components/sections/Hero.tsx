@@ -19,7 +19,7 @@ export default function Hero() {
     return (
         <section
             id="hero"
-            className="relative min-h-screen flex flex-col justify-end px-16 pb-20 pt-32 overflow-hidden"
+            className="relative min-h-screen flex flex-col justify-end px-6 md:px-16 pb-20 pt-32 overflow-hidden"
         >
             {/* Background large letters */}
             <motion.span
@@ -48,7 +48,7 @@ export default function Hero() {
                 variants={fadeUp}
                 initial="hidden"
                 animate="visible"
-                className="font-black leading-[0.92] tracking-[0.04em] text-[clamp(3.5rem,9vw,9rem)]"
+                className="font-black leading-[0.92] tracking-[0.04em] text-[clamp(3rem,12vw,9rem)]"
             >
                 Marios
                 <br />
@@ -61,7 +61,7 @@ export default function Hero() {
                 variants={fadeUp}
                 initial="hidden"
                 animate="visible"
-                className="mt-9 max-w-xl text-lg font-light text-[var(--ink-muted)] leading-relaxed"
+                className="mt-6 md:mt-9 max-w-xl text-base md:text-lg font-light text-[var(--ink-muted)] leading-relaxed"
             >
                 I craft fast, accessible, and visually compelling web experiences —
                 from pixel-perfect interfaces to performant SPAs. Based anywhere,
@@ -74,7 +74,7 @@ export default function Hero() {
                 variants={fadeUp}
                 initial="hidden"
                 animate="visible"
-                className="mt-12 flex gap-4 flex-wrap"
+                className="mt-8 md:mt-12 flex gap-3 flex-wrap"
             >
                 <Link
                     href="#projects"
