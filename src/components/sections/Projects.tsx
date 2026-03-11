@@ -28,14 +28,14 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       className={cn(
-        "group relative bg-[var(--surface)] rounded-2xl border border-[var(--border)] p-10 overflow-hidden",
+        "group relative bg-[var(--surface)] rounded-2xl border border-[var(--border)] p-6 md:p-10 overflow-hidden",
         "hover:-translate-y-2 hover:shadow-2xl transition-all duration-300",
         "grid gap-8 items-center",
-        project.featured ? "col-span-2" : ""
+        project.featured ? "col-span-1 md:col-span-2" : ""
       )}
       style={project.featured 
         ? { gridTemplateColumns: "1.4fr 1fr"}
-        : { gridTemplateColumns: "1.2fr 0.8fr"}}
+        : { gridTemplateColumns: "1fr"}}
     >
       {/* Left - text content */}
       <div className="flex flex-col">
@@ -95,7 +95,9 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
       </div>
 
       {/* Right - slideshow (always shown) */}
-      <div className={project.featured ? "h-72" : "h-full min-h-[200px] overflow-hidden rounded-xl"}>
+      <div className={cn(
+        "overflow-hidden rounded-xl",
+        project.featured ? "h-64 md:h-72" : "hidden md:block h-full min-h-[200px]")}>
           <ProjectSlideshow images={project.images} title={project.title} />
       </div>
     </motion.div>
@@ -107,7 +109,7 @@ export default function Projects() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="projects" ref={ref} className="bg-[var(--bg)] px-16 py-32">
+    <section id="projects" ref={ref} className="bg-[var(--bg)] px-6 md:px-16 py-20 md:py-32">
       {/* Section header */}
       <motion.div
         custom={0}
@@ -125,7 +127,7 @@ export default function Projects() {
         <div className="flex-1 h-px bg-[var(--border)] ml-5" />
       </motion.div>
 
-      <div className="grid grid-cols-2 gap-7">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
         {projects.map((project, i) => (
           <ProjectCard
             key={project.num}
