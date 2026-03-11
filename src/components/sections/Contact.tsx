@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowUpRight, Mail, Github, Linkedin } from "lucide-react";
+import { ArrowUpRight, Mail, Github, Linkedin, FileText } from "lucide-react";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 32 },
@@ -94,6 +94,16 @@ export default function Contact() {
                 >
                     <Github size={15} />
                     Github
+                    <ArrowUpRight size={13} />
+                </a>
+                <a
+                    href="/cv/CV.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/25 text-sm font-medium hover:border-white hover:-translate-y-1 transition-all duration-250"
+                >
+                    <FileText size={15} />
+                    Resume
                     <ArrowUpRight size={13} />
                 </a>
             </motion.div>
