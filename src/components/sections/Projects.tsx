@@ -121,7 +121,7 @@ export default function Projects() {
         <span className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
           02
         </span>
-        <h2 className="font-black text-5xl tracking-tight leading-none">
+        <h2 className="font-black text-3xl md:text-5xl tracking-tight leading-none">
           Projects
         </h2>
         <div className="flex-1 h-px bg-[var(--border)] ml-5" />

@@ -36,7 +36,7 @@ export default function About() {
                 <span className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
                     01
                 </span>
-                <h2 className="font-black text-5xl tracking-light leading-none">
+                <h2 className="font-black text-3xl md:text-5xl tracking-light leading-none">
                     About
                 </h2>
                 <div className="flex-1 h-px bg-[var(--border)] ml-5" />
