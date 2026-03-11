@@ -33,9 +33,9 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
         "grid gap-8 items-center",
         project.featured ? "col-span-1 md:col-span-2" : ""
       )}
-      style={project.featured 
-        ? { gridTemplateColumns: "1.4fr 1fr"}
-        : { gridTemplateColumns: "1fr"}}
+      style={project.featured
+        ? { gridTemplateColumns: "1.4fr 1fr" }
+        : { gridTemplateColumns: "1fr" }}
     >
       {/* Left - text content */}
       <div className="flex flex-col">
@@ -98,7 +98,7 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
       <div className={cn(
         "overflow-hidden rounded-xl",
         project.featured ? "h-64 md:h-72" : "hidden md:block h-full min-h-[200px]")}>
-          <ProjectSlideshow images={project.images} title={project.title} />
+        <ProjectSlideshow images={project.images} title={project.title} />
       </div>
     </motion.div>
   );

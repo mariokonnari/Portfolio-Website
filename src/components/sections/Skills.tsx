@@ -69,7 +69,7 @@ export default function Skills() {
     const inView = useInView(ref, { once: true, margin: "-100px" });
 
     return (
-        <section id="skills" ref={ref} className="bg-[var(--surface)] px-16 py-32">
+        <section id="skills" ref={ref} className="bg-[var(--surface)] px-6 md:px-16 py-20 md:py-32">
             {/* Section header */}
             <motion.div
                 custom={0}
@@ -88,7 +88,7 @@ export default function Skills() {
             </motion.div>
 
             {/* Skill bars */}
-            <div className="grid grid-cols-2 gap-16 mb-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 mb-16 md:mb-20">
                 {skillGroups.map((group, gi) => (
                     <motion.div
                         key={group.title}
