@@ -26,6 +26,11 @@ export const projects: Project[] = [
             "/projects/saas-dashboard/4.png",
             "/projects/saas-dashboard/5.png",
             "/projects/saas-dashboard/6.png",
+            "/projects/saas-dashboard/7.png",
+            "/projects/saas-dashboard/8.png",
+            "/projects/saas-dashboard/9.png",
+            "/projects/saas-dashboard/10.png",
+            "/projects/saas-dashboard/11.png",
         ],
     },
     {
