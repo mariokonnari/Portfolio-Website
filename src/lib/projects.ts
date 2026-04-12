@@ -68,7 +68,7 @@ export const projects: Project[] = [
         description:
             "A collaborative interview preparation platform powered by AI. Built with a modern full-stack architecture featuring real-time collaboration, AI-generated questions, and comprehensive study materials for frontend engineering interviews.",
         tags: ["Vite", "React", "TypeScript", "Node.js", "Express", "Prisma", "Supabase", "PostgreSQL", "Gemini AI"],
-        github: "https://github.com/mariokonnari/interview-prep-app",
+        github: "https://github.com/mariokonnari/Interview-Prep",
         live: "https://intpreparation.netlify.app/",
         images: [
             "/projects/interview-prep/Desktop.png",
