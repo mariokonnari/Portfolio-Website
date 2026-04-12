@@ -71,9 +71,8 @@ export const projects: Project[] = [
         github: "https://github.com/mariokonnari/interview-prep-app",
         live: "https://intpreparation.netlify.app/",
         images: [
-            "/projects/interview-prep/1.png",
-            "/projects/interview-prep/2.png",
-            "/projects/interview-prep/3.png",
+            "/projects/interview-prep/Desktop.png",
+            "/projects/interview-prep/AnswerQuestionDesktop.png",
         ],
     },
 ];
