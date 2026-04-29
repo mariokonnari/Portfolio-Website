@@ -44,7 +44,7 @@ export const projects: Project[] = [
         description:
             "Single-page e-commerce application tackling shared cart and filter state across deeply nested components. Implements real-time product search via state lifting, dynamic routing, and a fully functional cart with per-item quantity controls backed by Redux Toolkit for predictable,centralised state management.",
         tags: ["React", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Vite", "REST API"],
-        github: "https://github.com/mariokonnari/Amazon-Clone",
+        github: "https://github.com/mariokonnari/E-Commerce-SPA",
         live: "https://mariozon.vercel.app/",
         images: [
             "/projects/amazon-clone/1.png",
